@@ -12,4 +12,9 @@ class Book extends Model
     protected $fillable = [
         'title', 'author', 'description', 'genre', 'price', 'cover_image', 'publication_date'
     ];
+
+    public function isImageAUrl()
+    {
+        return filter_var($this->cover_image, FILTER_VALIDATE_URL);
+    }
 }

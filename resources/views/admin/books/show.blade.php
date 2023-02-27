@@ -27,16 +27,15 @@
                     <div class="card-body  rounded-4 text-center">
                       <h5 class="card-title mt-4 mb-4">{{ $book->title }}</h5>
                         <div class="card-img mt-2 mb-2">
-                             <img src="{{ $book->cover_image }}" class="img-fluid" alt="cover_book"> 
+                             <img src="{{ $book->cover_image }}" class="img-fluid" width="350px"  alt="cover_book"> 
                         </div>
                         <p class="card-text p-3">{{ $book->description }}</p>
                         <div class="card-footer  rounded-4 p-3">
                             <span class="d-block">Data di pubblicazione : {{ $book->publication_date}} </span>
                             <span class="d-block">Prezzo: {{ $book->price }}&euro; </span>
                         </div>
-                        {{-- <div class="col">
-                            <div class="mt-3">     ------------ collegamento con bottoni per edit ,destroy ------------
-
+                         <div class="col">
+                            <div class="mt-3">
                                 <a class="btn btn-warning" href="{{ route('admin.books.edit', $book->id) }}"> Edit
                                     <i class="fa-solid fa-edit"></i> </a>
                                 <form class="d-inline-block delete double-confirm"
@@ -46,10 +45,10 @@
                                     <button class="btn btn-danger">Delete <i class="fa-solid fa-trash"></i></button>
                                 </form>
                             </div>
-                        </div> --}}
-                        {{-- <div class="row mt-5">
+                        </div>
+                        <div class="row mt-5">
                           <div class="col-4">
-                            @if (isset($previousBook->id))          --------- bottoni per per avanti e indietro-------------------
+                            @if (isset($previousBook->id))        
                                 <a class="btn btn-outline-primary mt-3"
                                     href="{{ route('admin.books.show', $previousBook->id) }}">Previous Page</a>
                             @else
@@ -67,7 +66,7 @@
                             @else
                                 <a class="btn btn-outline-primary disabled mt-3" href="">End Next Page</a>
                             @endif
-                        </div> --}}
+                        </div>
                         </div>
                     </div>
                 </div>

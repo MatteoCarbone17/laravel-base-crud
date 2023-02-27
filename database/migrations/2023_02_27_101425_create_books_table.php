@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('title', 200);
             $table->string('author', 100)->default('');
             $table->text('description');
-            $table->string('genre');
+            $table->string('genre', 255);
             $table->integer('price');
             $table->text('cover_image')->nullable();
             $table->date('publication_date');

@@ -112,6 +112,6 @@ class BookController extends Controller
     public function destroy(Book $book)
     {
         $book->delete();
-        return redirect()->route('admin.posts.index')->with('message', 'The post has been removed correctly')->with('message_class','danger');
+        return redirect()->route('admin.books.index')->with('message', 'The post has been removed correctly')->with('message_class','danger');
     }
 }

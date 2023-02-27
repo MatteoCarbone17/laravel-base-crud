@@ -34,9 +34,8 @@
                             <span class="d-block">Data di pubblicazione : {{ $book->publication_date}} </span>
                             <span class="d-block">Prezzo: {{ $book->price }}&euro; </span>
                         </div>
-                        {{-- <div class="col">
-                            <div class="mt-3">     ------------ collegamento con bottoni per edit ,destroy ------------
-
+                         <div class="col">
+                            <div class="mt-3">
                                 <a class="btn btn-warning" href="{{ route('admin.books.edit', $book->id) }}"> Edit
                                     <i class="fa-solid fa-edit"></i> </a>
                                 <form class="d-inline-block delete double-confirm"
@@ -46,10 +45,10 @@
                                     <button class="btn btn-danger">Delete <i class="fa-solid fa-trash"></i></button>
                                 </form>
                             </div>
-                        </div> --}}
-                        {{-- <div class="row mt-5">
+                        </div>
+                        <div class="row mt-5">
                           <div class="col-4">
-                            @if (isset($previousBook->id))          --------- bottoni per per avanti e indietro-------------------
+                            @if (isset($previousBook->id))        
                                 <a class="btn btn-outline-primary mt-3"
                                     href="{{ route('admin.books.show', $previousBook->id) }}">Previous Page</a>
                             @else
@@ -67,7 +66,7 @@
                             @else
                                 <a class="btn btn-outline-primary disabled mt-3" href="">End Next Page</a>
                             @endif
-                        </div> --}}
+                        </div>
                         </div>
                     </div>
                 </div>

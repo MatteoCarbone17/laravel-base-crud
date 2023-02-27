@@ -125,7 +125,7 @@ class BookController extends Controller
         ]);
         $data['cover_image'] = Storage::put('imgs', $data['cover_image']);
         $book->update($data);
-        return redirect()->route('admin.books.index', compact('post'));
+        return redirect()->route('admin.books.index', compact('book'));
     }
 
     /**

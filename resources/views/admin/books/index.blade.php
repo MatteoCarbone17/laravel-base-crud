@@ -10,7 +10,7 @@
                  <h3>Elenco Libri</h3>
              </div>
              <div class="py-4 d-flex">
-                 <a class="btn btn-secondary btn-sm p-2 g-2 bs-info-text" href="{{ route('admin.dashboard') }}">Dashboard</a>
+                 <a class="btn btn-secondary btn-sm p-2 g-2 bs-info-text" href="{{ route('dashboard') }}">Dashboard</a>
                  {{-- <a class="btn btn-danger btn-sm p-2 ms-2" href="{{ route ("admin.books.trashed")}}"><i class="fa-solid fa-trash p-1"></i>Cestino</a> --}}
                  <a class="btn btn-success btn-sm ms-2" href="{{ route('admin.books.create') }}"><i
                          class="fa-solid fa-plus text-white p-2"></i>Aggiungi nuovo</a>

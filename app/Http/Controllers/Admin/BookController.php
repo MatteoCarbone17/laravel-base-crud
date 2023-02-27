@@ -26,7 +26,8 @@ class BookController extends Controller
      */
     public function create()
     {
-       
+        $book = new Book();
+        return view('admin.books.create', compact('book'));
     }
 
     /**

@@ -29,7 +29,7 @@
   <div class="form-group row p-3">
     <label for="author" class="col-sm-2 col-form-label fw-bold">Autore</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control @error('author') is-invalid @enderror" id="author" placeholder="Inserisci autore" name="category" value="{{ old('author' , $book->author)}}">
+      <input type="text" class="form-control @error('author') is-invalid @enderror" id="author" placeholder="Inserisci autore" name="author" value="{{ old('author' , $book->author)}}">
     @error('author')
             <div class="invalid-feedback">
                 {{ $message }}

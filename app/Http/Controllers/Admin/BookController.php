@@ -47,7 +47,7 @@ class BookController extends Controller
             'description' => 'required',
             'genre' => 'required|max:255',
             'price' => 'required',
-            'cover_image'=> 'nullable',
+            'cover_image'=> 'required',
             'publication_date' => 'required'
         ],
         [

@@ -66,7 +66,7 @@ class BookController extends Controller
         $newBook->fill($data);
         $newBook->save();
 
-        return redirect()->route('admin.books.index');
+        return redirect()->route('admin.books.show',$newBook->id );
 
     }
 

@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Models\Book;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 
 class BookController extends Controller
 {
@@ -37,7 +38,34 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        $data = $request->validate([
+            'title' => 'required|max:200',
+            'author' => 'required|max:100',
+            'description' => 'required',
+            'genre' => 'required',
+            'price' => 'required',
+            'publication_date' => 'required'
+        ],
+        [
+            'title.required' => 'Il campo "Titolo" non può essere lasciato vuoto',
+            'title.max' => 'Il campo "Titolo" supera i 200 caratteri massimi',
+            'author.required' => 'Il campo "Autore" non può essere lasciato vuoto',
+            'author.max' => 'Il campo "Autore" supera i 100 caratteri massimi',
+            'description.required' => 'Il campo "Descrizione" non può essere lasciato vuota',
+            'genre.required' => 'Il campo "Genere" non può essere lasciato vuoto',
+            'price.required' => 'Il campo "Prezzo" non può essere lasciato vuoto',
+            'publication_date.required' => 'Il campo "Data" non può essere lasciato vuoto',
+        ]);
+
+        $data['cover_image'] = Storage::put('imgs/', $data['cover_image']);
+
+        $newBook = new Book();
+        $newBook->fill($data);
+        $newBook->save();
+
+        return redirect()->route('admin.books.index');
+
     }
 
     /**

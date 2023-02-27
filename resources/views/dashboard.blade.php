@@ -8,7 +8,7 @@
     <div class="row justify-content-center">
         <div class="col">
             <div class="card">
-                <div class="card-header">{{ __('User Dashboard') }}</div>
+                <div class="card-header">{{ __('Dashboard') }}</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -16,9 +16,13 @@
                         {{ session('status') }}
                     </div>
                     @endif
-
-                    {{ __('You are logged in!') }}
-                </div>
+                    <div>
+                        {{-- <p><strong> Benvenuto, </strong> {{  $user->name }}</p> --}}
+                    </div>
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <a href="{{route("admin.books.index")}}" class="btn btn-secondary me-md-2 btn-sm" type="button">Visualizza i tuoi progetti</a>
+                        </div>
+                    </div>
             </div>
         </div>
     </div>

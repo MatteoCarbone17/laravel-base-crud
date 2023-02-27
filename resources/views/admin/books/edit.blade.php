@@ -11,8 +11,8 @@
                 </h1>
             </div>
         </div>
+        @include('admin.books.partials.create_edit_form',['route'=> 'admin.books.update','method'=>'PUT', 'book'=> $book ])
     </div>
 
-    @include('admin.books.partials.create_edit_form',['route'=> 'admin.books.update','method'=>'PUT', 'book'=> $book ])
 
 @endsection

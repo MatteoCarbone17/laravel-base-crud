@@ -110,7 +110,7 @@ class BookController extends Controller
             'description' => 'required',
             'genre' => 'required|max:255',
             'price' => 'required',
-            'cover_image' => 'nullable',
+            'cover_image' => 'required|image',
             'publication_date' => 'required'
         ],
         [
@@ -121,8 +121,16 @@ class BookController extends Controller
             'description.required' => 'Il campo "Descrizione" non può essere lasciato vuota',
             'genre.required' => 'Il campo "Genere" non può essere lasciato vuoto',
             'price.required' => 'Il campo "Prezzo" non può essere lasciato vuoto',
+            'cover_image.required' => 'campo obbligatorio',
             'publication_date.required' => 'Il campo "Data" non può essere lasciato vuoto',
         ]);
+        
+        if ($request->hasFile('cover_image')) {
+            
+            if (!$book->isImageAUrl()) {
+                Storage::delete($book->cover_image);
+            }
+        }
         $data['cover_image'] = Storage::put('imgs', $data['cover_image']);
         $book->update($data);
         return redirect()->route('admin.books.index', compact('book'));

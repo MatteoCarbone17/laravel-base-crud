@@ -75,11 +75,11 @@ class BookController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(book $book)
+    public function show(Book $book)
     {
-        // $nextBook = Book::where('id', '>', $book->id)->first();
-        // $previousBook = Book::where('id', '<', $book->id)->orderBy('id', 'DESC')->first();
-        return view('admin.books.show', compact('book'));
+        $previousBook = Book::where('id', '<', $book->id)->orderBy('id', 'DESC')->first();
+        $nextBook = Book::where('id', '>', $book->id)->first();
+        return view('admin.books.show', compact('book','nextBook','previousBook' ));
     }
 
     /**

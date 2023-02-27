@@ -51,7 +51,7 @@
   <div class="form-group row p-3">
     <label for="genre" class="col-sm-2 col-form-label fw-bold">Genere</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control @error('genre') is-invalid @enderror" id="genre" placeholder="Inserisci il genere" name="technology_used" value="{{ old('genre' , $book->genre)}}">
+      <input type="text" class="form-control @error('genre') is-invalid @enderror" id="genre" placeholder="Inserisci il genere" name="genre" value="{{ old('genre' , $book->genre)}}">
     @error('genre')
             <div class="invalid-feedback">
                 {{ $message }}

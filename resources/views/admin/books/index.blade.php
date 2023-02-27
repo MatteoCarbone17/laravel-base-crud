@@ -1,7 +1,7 @@
  @extends('layouts.admin')
  @section('title', 'Elenco - Libri')
+    @vite(['resources/js/deleteForm.js'])
  @section('content')
-     {{-- @include('admin.books.partials.popup') --}}
      <div class="container">
 
 
@@ -18,9 +18,6 @@
 
          </div>
 
-         {{-- @if (session('alert-message'))
-              <div id="popup_message" class="d-none" data-type="{{ session('alert-type') }}" data-message="{{ session('alert-message') }}"></div>
-            @endif --}}
 
 
 

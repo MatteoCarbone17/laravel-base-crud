@@ -20,7 +20,7 @@ Route::get('/', function () {
 });
 
 Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(function (){
-    Route::resource('/books', BookController::class);
+    Route::resource('/books', AdminBookController::class);
 });
 
 Route::get('/dashboard', function () {

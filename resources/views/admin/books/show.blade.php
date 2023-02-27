@@ -37,7 +37,7 @@
                             <span class="d-block">Data di pubblicazione : {{ $book->publication_date}} </span>
                         </div>
                         {{-- <div class="col">
-                            <div class="mt-3">      collegamento con bottoni per edit ,destroy, delete 
+                            <div class="mt-3">     ------------ collegamento con bottoni per edit ,destroy, delete ------------
 
                                 <a class="btn btn-warning" href="{{ route('admin.projects.edit', $book->id) }}"> Edit
                                     <i class="fa-solid fa-edit"></i> </a>
@@ -51,7 +51,7 @@
                         </div> --}}
                         {{-- <div class="row mt-5">
                           <div class="col-4">
-                            @if (isset($previousProject->id))           bottoni per per avanti e indietro 
+                            @if (isset($previousProject->id))          --------- bottoni per per avanti e indietro-------------------
                                 <a class="btn btn-outline-primary mt-3"
                                     href="{{ route('admin.projects.show', $previousProject->id) }}">Previous Page</a>
                             @else

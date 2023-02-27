@@ -27,7 +27,7 @@
                     <div class="card-body  rounded-4 text-center">
                       <h5 class="card-title mt-4 mb-4">{{ $book->title }}</h5>
                         <div class="card-img mt-2 mb-2">
-                             <img src="{{ $book->cover_image }}" class="img-fluid" alt="cover_book"> 
+                             <img src="{{ $book->cover_image }}" class="img-fluid" width="350px"  alt="cover_book"> 
                         </div>
                         <p class="card-text p-3">{{ $book->description }}</p>
                         <div class="card-footer  rounded-4 p-3">
